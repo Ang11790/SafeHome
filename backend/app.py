@@ -7,31 +7,20 @@ from functools import wraps
 app = Flask(__name__)
 CORS(app)
 
-# Agrega la carpeta raíz del proyecto al path para importar módulos desde fuera de Api/
-PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-if PROJECT_ROOT not in sys.path:
-    sys.path.insert(0, PROJECT_ROOT)
-
 # --- Importaciones de tus módulos Firebase ---
-from firebase_config import db
-from auth_utils import create_firebase_user_and_profile, verify_id_token
-from firestore_utils import (
+from .firebase_config import db
+from .auth_utils import create_firebase_user_and_profile, verify_id_token
+from .firestore_utils import (
     get_user_profile_from_firestore,
     update_user_profile_in_firestore,
     add_emergency_contact_to_firestore,
     get_emergency_contacts_from_firestore,
     delete_emergency_contact_from_firestore
 )
-# ¡Añade esta línea!
-from firebase_admin import firestore # <-- AÑADE ESTO
-
-# También puedes necesitar esta si usas 'auth' directamente en app.py
+from firebase_admin import firestore
 from firebase_admin import auth
 
-app = Flask(__name__)
-
 # --- Middleware de Autenticación (Decorador) ---
-# Este decorador protegerá tus rutas, asegurando que solo usuarios autenticados puedan acceder.
 def firebase_auth_required(f):
     @wraps(f)
     def decorated_function(*args, **kwargs):
@@ -44,14 +33,13 @@ def firebase_auth_required(f):
 
         try:
             id_token = auth_header.split("Bearer ")[1]
-            decoded_token = verify_id_token(id_token) # Función de auth_utils.py
+            decoded_token = verify_id_token(id_token)
             if not decoded_token:
                 return jsonify({
                     "success": False,
                     "message": "Token inválido, expirado o revocado. Vuelva a iniciar sesión."
                 }), 401
 
-            # Si el token es válido, inyecta el UID del usuario en el objeto request
             request.uid = decoded_token['uid']
             return f(*args, **kwargs)
         except IndexError:
@@ -68,16 +56,13 @@ def firebase_auth_required(f):
     return decorated_function
 
 # --- RUTAS DE AUTENTICACIÓN ---
-
 @app.route("/api/auth/register", methods=["POST"])
 def register_user():
     data = request.get_json(silent=True) or {}
-
     name = data.get("name")
     email = data.get("email")
     password = data.get("password")
-    phone = data.get("phone") # El teléfono es opcional para Firebase Auth si no se usa como método de login
-
+    phone = data.get("phone")
     if not name or not email or not password:
         return jsonify({
             "success": False,
@@ -88,15 +73,12 @@ def register_user():
             "success": False,
             "message": "La contraseña debe tener al menos 6 caracteres."
         }), 400
-
-    # Usamos la función de auth_utils para crear el usuario en Auth y Firestore
     uid = create_firebase_user_and_profile(email, password, name, phone)
-
     if uid == "Email already exists":
         return jsonify({
             "success": False,
             "message": "Este email ya está registrado. Intente iniciar sesión."
-        }), 409 # 409 Conflict - Recurso ya existe
+        }), 409
     elif uid:
         return jsonify({
             "success": True,
@@ -111,26 +93,16 @@ def register_user():
 
 @app.route("/api/auth/login", methods=["POST"])
 def login_user():
-    # MUY IMPORTANTE: La autenticación real (verificación de email/contraseña)
-    # se realiza en el CLIENTE (tu app Flutter) usando el Firebase SDK para Flutter.
-    # Una vez que el cliente inicia sesión, obtiene un ID Token.
-    # Este endpoint solo se encarga de verificar ese ID Token y, opcionalmente,
-    # registrar el último acceso o enviar información adicional al cliente.
-
     data = request.get_json(silent=True) or {}
     id_token = data.get("idToken")
-
     if not id_token:
         return jsonify({
             "success": False,
             "message": "Se requiere el 'idToken' de Firebase Auth para verificar el inicio de sesión."
         }), 400
-
-    decoded_token = verify_id_token(id_token) # Usamos la función de auth_utils.py
-
+    decoded_token = verify_id_token(id_token)
     if decoded_token:
         uid = decoded_token['uid']
-        # Opcional: Actualizar el campo 'ultimo_acceso' en el perfil de Firestore
         update_user_profile_in_firestore(uid, {'ultimo_acceso': firestore.SERVER_TIMESTAMP})
         return jsonify({
             "success": True,
@@ -145,13 +117,10 @@ def login_user():
         }), 401
 
 # --- RUTAS PROTEGIDAS PARA EL PERFIL DE USUARIO ---
-
 @app.route("/api/profile", methods=["GET"])
-@firebase_auth_required # Protegemos esta ruta con el decorador
+@firebase_auth_required
 def get_profile():
-    # El UID del usuario autenticado ya está disponible en request.uid gracias al decorador
-    user_profile = get_user_profile_from_firestore(request.uid) # Función de firestore_utils.py
-
+    user_profile = get_user_profile_from_firestore(request.uid)
     if user_profile:
         return jsonify({
             "success": True,
@@ -164,26 +133,21 @@ def get_profile():
         }), 404
 
 @app.route("/api/profile/update", methods=["PUT"])
-@firebase_auth_required # Protegemos esta ruta
+@firebase_auth_required
 def update_profile():
     data = request.get_json(silent=True) or {}
-    uid = request.uid # UID del usuario autenticado
-
-    # Filtrar solo los campos que permites actualizar
+    uid = request.uid
     updatable_fields = {}
     if 'name' in data:
         updatable_fields['nombre'] = data['name']
     if 'phone' in data:
         updatable_fields['telefono'] = data['phone']
-    # Puedes añadir más campos aquí, por ejemplo: 'genero', 'fecha_nacimiento'
-
     if not updatable_fields:
         return jsonify({
             "success": False,
             "message": "No se proporcionaron campos válidos para actualizar."
         }), 400
-
-    if update_user_profile_in_firestore(uid, updatable_fields): # Función de firestore_utils.py
+    if update_user_profile_in_firestore(uid, updatable_fields):
         return jsonify({
             "success": True,
             "message": "Perfil actualizado exitosamente."
@@ -195,25 +159,21 @@ def update_profile():
         }), 500
 
 # --- RUTAS PROTEGIDAS PARA CONTACTOS DE EMERGENCIA ---
-
 @app.route("/api/user/contacts", methods=["POST"])
 @firebase_auth_required
 def add_contact():
     data = request.get_json(silent=True) or {}
     uid = request.uid
-
     contact_name = data.get('name')
     phone_number = data.get('phone')
     email = data.get('email')
     relation = data.get('relation')
-
     if not contact_name or not phone_number:
         return jsonify({
             "success": False,
             "message": "Los campos 'name' y 'phone' del contacto son requeridos."
         }), 400
-
-    contact_id = add_emergency_contact_to_firestore(uid, contact_name, phone_number, email, relation) # Función de firestore_utils.py
+    contact_id = add_emergency_contact_to_firestore(uid, contact_name, phone_number, email, relation)
     if contact_id:
         return jsonify({
             "success": True,
@@ -230,7 +190,7 @@ def add_contact():
 @firebase_auth_required
 def get_contacts():
     uid = request.uid
-    contacts = get_emergency_contacts_from_firestore(uid) # Función de firestore_utils.py
+    contacts = get_emergency_contacts_from_firestore(uid)
     return jsonify({
         "success": True,
         "data": contacts
@@ -240,7 +200,7 @@ def get_contacts():
 @firebase_auth_required
 def delete_contact(contact_id):
     uid = request.uid
-    if delete_emergency_contact_from_firestore(uid, contact_id): # Función de firestore_utils.py
+    if delete_emergency_contact_from_firestore(uid, contact_id):
         return jsonify({
             "success": True,
             "message": "Contacto de emergencia eliminado exitosamente."
@@ -251,7 +211,5 @@ def delete_contact(contact_id):
             "message": "Error al eliminar contacto de emergencia o no se encontró."
         }), 404
 
-
-# --- PUNTO DE ENTRADA DEL SERVIDOR FLASK ---
 if __name__ == "__main__":
-    app.run(debug=True, host='0.0.0.0', port=5000) # Usar host='0.0.0.0' para ser accesible desde otras máquinas/contenerdores
+    app.run(debug=True, host='0.0.0.0', port=5000)

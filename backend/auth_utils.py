@@ -1,4 +1,3 @@
-# auth_utils.py
 from firebase_admin import auth
 from firebase_admin import firestore
 from firebase_config import db # Importamos la instancia de Firestore
