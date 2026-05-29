@@ -1,0 +1,180 @@
+{
+   "checksum": "9a8c19b41877e22b5b58738071361127",
+   "roots": {
+      "bookmark_bar": {
+         "children": [ {
+            "date_added": "13199820586582209",
+            "date_last_used": "0",
+            "guid": "5687870a-b21c-4f93-ae62-a27c587119b1",
+            "id": "7",
+            "name": "YouTube",
+            "show_icon": false,
+            "source": "unknown",
+            "type": "url",
+            "url": "https://youtube.com/",
+            "visit_count": 0
+         }, {
+            "date_added": "13199820586585899",
+            "date_last_used": "0",
+            "guid": "42938377-7e6c-43bf-870e-e021ed6b8480",
+            "id": "8",
+            "name": "Maps",
+            "show_icon": false,
+            "source": "unknown",
+            "type": "url",
+            "url": "https://maps.google.com/",
+            "visit_count": 0
+         }, {
+            "date_added": "13216854802319670",
+            "date_last_used": "0",
+            "guid": "bcc0a9d3-c719-49ef-a4dc-a389c81d8b67",
+            "id": "9",
+            "name": "Iniciar sesión",
+            "show_icon": false,
+            "source": "unknown",
+            "type": "url",
+            "url": "https://accounts.google.com/ServiceLogin?hl=es-419&passive=true&continue=https://www.google.com/search%3Fbiw%3D1528%26bih%3D797%26tbm%3Disch%26sa%3D1%26ei%3DWqG4XY7IO-Ok_QadsqvoBQ%26q%3Ddisfraz%2Bpara%2Bmujer%26oq%3Ddisfraz%2Bpara%2B%26gs_l%3Dimg.1.0.0l10.34372.44794..47496...0.0..0.303.4480.0j7j14j1......0....1..gws-wiz-img.......0i131.su5U8R1bCTY",
+            "visit_count": 0
+         }, {
+            "date_added": "13223760163009266",
+            "date_last_used": "0",
+            "guid": "f985ff8b-a0ed-49bc-bab8-5b60258fe466",
+            "id": "10",
+            "name": "Freelancer",
+            "show_icon": false,
+            "source": "unknown",
+            "type": "url",
+            "url": "https://www.freelancer.com.co/dashboard",
+            "visit_count": 0
+         }, {
+            "date_added": "13232147042930804",
+            "date_last_used": "0",
+            "guid": "8927f6a4-f1c4-4adb-b235-3aab27c0cd2b",
+            "id": "11",
+            "name": "Meet",
+            "show_icon": false,
+            "source": "unknown",
+            "type": "url",
+            "url": "https://meet.google.com/?authuser=3",
+            "visit_count": 0
+         }, {
+            "date_added": "13232147046635024",
+            "date_last_used": "0",
+            "guid": "50844907-2580-4e22-a234-1613be144152",
+            "id": "12",
+            "name": "Clases",
+            "show_icon": false,
+            "source": "unknown",
+            "type": "url",
+            "url": "https://classroom.google.com/u/0/h",
+            "visit_count": 0
+         } ],
+         "date_added": "13423354918578967",
+         "date_last_used": "0",
+         "date_modified": "13232147046635024",
+         "guid": "0bc5d13f-2cba-5d74-951f-3f233fe6c908",
+         "id": "1",
+         "name": "Barra de favoritos",
+         "source": "unknown",
+         "type": "folder"
+      },
+      "other": {
+         "children": [ {
+            "children": [ {
+               "children": [ {
+                  "date_added": "13176839539281715",
+                  "date_last_used": "0",
+                  "guid": "7e407d39-7d31-4930-a46d-21908009318d",
+                  "id": "15",
+                  "name": "GFPI_F_094_Formato_Paz_Y_Salvo_Académico_Administrativo (3).pdf",
+                  "show_icon": false,
+                  "source": "unknown",
+                  "type": "url",
+                  "url": "file:///C:/Users/paola/Documents/yeison%20sena/etapa%20productiva/GFPI_F_094_Formato_Paz_Y_Salvo_Acad%C3%A9mico_Administrativo%20(3).pdf",
+                  "visit_count": 0
+               } ],
+               "date_added": "13235842501426657",
+               "date_last_used": "0",
+               "date_modified": "13235842501426657",
+               "guid": "87bc0a8b-c6d3-40d0-ac9c-62a81f119946",
+               "id": "14",
+               "name": "Grupo 1",
+               "source": "unknown",
+               "type": "folder"
+            }, {
+               "children": [ {
+                  "date_added": "13211236375092381",
+                  "date_last_used": "0",
+                  "guid": "0989f452-1eb3-49af-bb00-75a1434a8262",
+                  "id": "17",
+                  "name": "Lectura Critica.pdf",
+                  "show_icon": false,
+                  "source": "unknown",
+                  "type": "url",
+                  "url": "file:///C:/Users/paola/OneDrive/Documentos/Lectura%20Critica.pdf",
+                  "visit_count": 0
+               }, {
+                  "date_added": "13211236375092381",
+                  "date_last_used": "0",
+                  "guid": "873cfc05-ceb5-408c-9fd0-56fd3360b0f8",
+                  "id": "18",
+                  "name": "OneDrive",
+                  "show_icon": false,
+                  "source": "unknown",
+                  "type": "url",
+                  "url": "https://login.live.com/login.srf?wa=wsignin1.0&rpsnv=13&ct=1566762735&rver=7.1.6819.0&wp=MBI_SSL_SHARED&lc=22538&id=250206&cbcxt=sky&ru=https%3A%2F%2Fonedrive%2Elive%2Ecom%2F%3Fid%3D56ce071b7e8e39cb%25210%253AL0xpdmVGb2xkZXJzL0RvY3VtZW50b3MvTGVjdHVyYSBDcml0aWMxLnBkZg&wreply=https%3A%2F%2Fonedrive%2Elive%2Ecom%2F%3Fid%3D56ce071b7e8e39cb%25210%253AL0xpdmVGb2xkZXJzL0RvY3VtZW50b3MvTGVjdHVyYSBDcml0aWMxLnBkZg",
+                  "visit_count": 0
+               } ],
+               "date_added": "13235842501427105",
+               "date_last_used": "0",
+               "date_modified": "13235842501427105",
+               "guid": "e281213e-73b5-42b2-aa2d-028df5a5b912",
+               "id": "16",
+               "name": "Grupo 2",
+               "source": "unknown",
+               "type": "folder"
+            } ],
+            "date_added": "13235842501425954",
+            "date_last_used": "0",
+            "date_modified": "13235842501425954",
+            "guid": "491b4d05-6064-4545-b425-e3c8a61b72b3",
+            "id": "13",
+            "name": "Pestañas reservadas",
+            "source": "unknown",
+            "type": "folder"
+         } ],
+         "date_added": "13423354918578967",
+         "date_last_used": "0",
+         "date_modified": "0",
+         "guid": "82b081ec-3dd3-529c-8475-ab6c344590dd",
+         "id": "2",
+         "name": "Otros favoritos",
+         "source": "unknown",
+         "type": "folder"
+      },
+      "synced": {
+         "children": [  ],
+         "date_added": "13423354918578967",
+         "date_last_used": "0",
+         "date_modified": "0",
+         "guid": "4cf2e351-0e85-532b-bb37-df045d8f8d0f",
+         "id": "3",
+         "name": "Favoritos móviles",
+         "source": "unknown",
+         "type": "folder"
+      },
+      "workspaces_v2": {
+         "children": [  ],
+         "date_added": "13424122120374846",
+         "date_last_used": "0",
+         "date_modified": "0",
+         "guid": "75aa6670-344f-549d-b742-660f029506ab",
+         "id": "20",
+         "name": "Áreas de trabajo",
+         "source": "unknown",
+         "type": "folder"
+      }
+   },
+   "sync_metadata": "CkEKHgiIgQISCISpdWGeAQAAKg4QABgBIAAoBjAAOABAABIAKhhmRTU5eVVGOFhKTnZCSzUrM3BWVjlBPT1IA6AGDBKsAQgREqcBChx1ZDdlOFhzS1FjajlxY0NGbXhCbFFlUXNiWEU9EiQ2ZmY0YjY2MS1hNjFlLTQzZmYtOWI0Ny0yZTJjMzZiMzkxMGQYACAAKAAw7fTX98UuOMmll+vyL0DJpZfr8i9KHEd6ZVlJWjZqZnRreWdLMUJUUjc0N0ZCYmk0QT1aHiIcMCs0M1BqTGJtZ1F1SjdJWThKc3BlajVUUi93PWV3cGyjwj4CYAASrQEIDBKoAQocU3lHNmNGQzFSYUNMRE0rNkdYS1dFQ1hONlNJPRIkNWU3NzUyNDctMjNlOC00YzEwLWExOTAtZGQ1YmU5YTEzN2EyGAAgACgAMM3prq/+MjiB95fr8i9AgfeX6/IvShxmQWJkR0JNTlh3blJCeWZtNXhnOUtTWHJDM2s9Wh8iHfROTGxXcFdHaE5ybG5zRThNVFFXYkJTc1hEWGc9ZQAAAADCPgJgABKsAQgSEqcBChxaSHg5cjlNNkV6dmxEVlJZaHBXUVJYc2JuQ1k9EiQxYTJkOWRkMC0yMTg1LTRhMGUtYTU2NC01M2ZjMjVjYmUyYzIYACAAKAAw7vTX98UuOOill+vyL0DopZfr8i9KHHdKREtzWWt0WHhHekhjcHRCR2ZjZHJkeFk5cz1aHiIcMEJNYzFBM09LQy9lSHlESDhCSHNVa1JxTVBZPWWnHNIZwj4CYAASrAEIDxKnAQocbVlUWXVNOVpDRlRlbGwzM1ZDUDJBR05peVRFPRIkODk4YjU3ZjMtNWI2Yi00N2M2LTkyZjctMzJjMzhjYjc3Yjc3GAAgACgAMMrx1/fFLjiqpZfr8i9AqqWX6/IvShxPRDFQM2xKcFBPSC84S3RaWGhWR0trb0NuTlk9Wh4iHEk0Qy82ejlmTHVSRVdhK0ZGZm1HS1dhYlpuST1ld3Bso8I+AmAAEo4BCAISiQEKHFljU1RvbnZFU1B3cUNzNEwyY3JWaHY2OEw5OD0SJGQzNWY1ZDdkLTk3MzItNTQwOS1hMTg5LTc2ZWY5YmEwYTI3MBgAIAAoADCHh+qnqC44sKOX6/IvQLCjl+vyL0ocb1BWa2h3QlJiVjY1S0NXUjIrSU9OSFdvT3U4PVoAZQAAAADCPgJgABKsAQgQEqcBChx2WDBMN2ZHZjJSdVFzZEp5eDFpdEppcXFQT289EiQ1ZGJkMDU3MC0yZGI5LTRkOGQtODZkZC0xN2UxZTVhZWNmYjgYACAAKAAw7PTX98UuOLmll+vyL0C5pZfr8i9KHEhHNDlaMUZMQ0RBYzJXNWRXU3Z3cFFQMGhVST1aHiIcSTBWYVdDczdDZVZ6Vmp4VFJjT1Z1M1FwN3dvPWUAAAAAwj4CYAASrQEIChKoAQocNVdaRzFWV1o1bGJiVGpDUHRrU2M0aTVDNGxVPRIkMTljMGMxYTQtMDk0YS00NTdiLTllYjktNTdhNTczMDIwNmRiGAAgACgAMLT31/fFLjiXppfr8i9Al6aX6/IvShx6Q0xOa0pUMHN1VkpVTEhRazIwWVVBUDJpakk9Wh8iHdJuZkQ0VXA3M1NSQndWdGx6eTlKeDNvdmEvV2c9ZQAAAADCPgJgABKsAQgOEqcBChw4QXNJc3hXUWFrQTdCSTB0Z3RCQ3lLekxZcGs9EiRlZjg1OTBlMS0wZDZkLTQ1OTYtYjRjMi04Njk1ZmVmYjJlZDkYACAAKAAwyfHX98UuOJqll+vyL0CapZfr8i9KHHZZdUVVQ1ROVmNKNldJMTIxUEVuTGZtV3dsWT1aHiIcK0ZnRUV0VmFpUzE2a1p3TFdSQjRjRjBzRndRPWUAAAAAwj4CYAASrQEICRKoAQocVXRoVStWN1haTzh0VnhZNkhJY3dYVGh6TW9JPRIkYThiZTFhNzAtMzZhMy00Mzc2LWI1MzAtYzRkOTVkZWYyZjk5GAAgACgAMN351/fFLjinppfr8i9Ap6aX6/IvShx4c04yTXJadXFqMThmRG1VOE8rdzVtbzFlNjg9Wh8iHaVDcXVLTDMwQzNwM1pTaGRyOU5USThzQnpLa0E9ZQAAAADCPgJgABKsAQgIEqcBChxIYUE1dU1ZV2tHblNpaWg4OUlUSS9EbzhKWUE9EiQ5NDNhNmQ1MC0xY2Y0LTQxMjItOGE2Yy04ODMzNThhM2E1OTIYACAAKAAw8PTX98UuOPill+vyL0D4pZfr8i9KHDU3QlBQWnptb3JaVk5hSVJ4UWxud0JFOWxlaz1aHiIcS1hvUDVHeTdKRytZR05VajU3Uzh0K0g1eWJBPWUAAAAAwj4CYAASrAEIBxKnAQocRmJHU1J6ODhETjZZMW1MK0ZOVXUxbnZsVTF3PRIkOTQxZmM4ZjYtZDJkMy00OGM1LTljMTctZjc1NmQ3ZTQ4Nzc2GAAgACgAMM/prq/+Mjig95fr8i9AoPeX6/IvShxSZVlRQ2E3WVN6NGtBRE5rWmdaTHJKTWlmSEk9Wh4iHENxbXpQTTZhNTFEYkhkZ0lKaTdkakM5YWJiVT1lAAAAAMI+AmAAEo4BCAESiQEKHHl4Si82ZnZrZWNyN2twNUVRekI0dFdMcGRiRT0SJDQ5ZTkwNTdjLWNiYjctNWE5Mi05MDc4LTVhODc0NzA0NzdkZRgAIAAoADCGh+qnqC44oKOX6/IvQKCjl+vyL0ocYVJDV0xnaEY5YjVJbnFLSUR2dUovanZRa0ZjPVoAZQAAAADCPgJgABKOAQgUEokBChx3UkJyWkwrNlBBOWF2S2dqTlA3SlhETGNmdnM9EiQ5M2QyOGNiMy01YzQzLTU2ZDUtODk5ZC01NDUxYjM2ZWVjYmEYACAAKAAwzbrb7OIzOPe62+ziM0D3utvs4jNKHG5teDY1c1FEdnhJOFRnRWV2K0ErbnR0b1NuND1aAGUAAAAAwj4CYAASrAEIDRKnAQocRW1zWUhQS05sNEo1SFczcGxiTFZPRWVFNkhFPRIkNmEwNjQwYmQtYmExMy00ZDc3LTk5N2ItZWRiMzJiMDgwZTkyGAAgACgAMMjx1/fFLjjrpJfr8i9A66SX6/IvShxoVlNDK2UvOEpONUl3RjhrYysybS9GcGZsZ3M9Wh4iHE51NCtVL04wU3Z3WnR1YStpTmFkRVhXOWZKTT1lAAAAAMI+AmAAEq0BCAsSqAEKHFFzQXQzNXdsT29SZ0xDZ0c4Y3ZQZUplMmNzMD0SJGRlM2M1ODVlLTI2Y2ItNDUzOC04NjY0LTc3OGM3MGVkNjM1ZBgAIAAoADDO6a6v/jI4sPeX6/IvQLD3l+vyL0ocU0ZtajNBdFVlVFhJRUk5KzJocERzY2ttc3owPVofIh3pY2UwZGsxOHRkTC82a3UzcGhwRXJzaEZ3SmhrPWUAAAAAwj4CYAASjgEIAxKJAQocbmpnRHU4OGVDcnZYcDg2cEQ3ZkhHY3FGcDg4PRIkZTFiZTUxMmUtMzMzNy01OTQxLTg3OTQtNjU5NGJkNTc0MGFhGAAgACgAMIuH6qeoLjjuo5fr8i9A7qOX6/IvShx5ek5CMDFjbjU0QTdjUlUwdVQrL1BnbVR0VW89WgBlAAAAAMI+AmAAMAA4AA==",
+   "version": 1
+}
